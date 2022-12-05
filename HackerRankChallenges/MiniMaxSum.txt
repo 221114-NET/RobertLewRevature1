@@ -1,3 +1,4 @@
+// Solution 1
 public static void miniMaxSum(List<int> arr)
 {   
     long sum = 0; // instantiate a long integer
@@ -10,4 +11,13 @@ public static void miniMaxSum(List<int> arr)
     }
 
     Console.WriteLine($"{sum - arr.Max()} {sum - arr.Min()}");
+}
+
+// Solution 2 - 1 line version
+public static void miniMaxSum(List<int> arr)
+{   
+    // (long)arr.Sum(v => (long)v gets the sum of the list as an array (could be a variable to be more clear)
+    // 1st {} subtracts the Max() value of the array from the Sum to get the minimum sum
+    // 2nd {} subtracts the Min() value of the array from the Sum to get the maximum sum
+    Console.WriteLine($"{(long)arr.Sum(v => (long)v) - arr.Max()} {(long)arr.Sum(v => (long)v) - arr.Min()}");
 }
