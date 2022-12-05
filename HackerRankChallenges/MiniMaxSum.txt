@@ -1,0 +1,13 @@
+public static void miniMaxSum(List<int> arr)
+{   
+    long sum = 0; // instantiate a long integer
+        
+    // loop through each number in the list arr
+    foreach (var num in arr)
+    {
+        // add the number to the sum
+        sum += num;
+    }
+
+    Console.WriteLine($"{sum - arr.Max()} {sum - arr.Min()}");
+}
