@@ -1,0 +1,26 @@
+public static List<int> gradingStudents(List<int> grades)
+{
+    // Iterate through the grades list the number of times there are students (in grades index 0)
+    foreach (var grade in grades)
+    {
+        // find nearest multiple of 5
+        int nearestMultipleOfFive = (int)Math.Round(grade / 5.0) * 5;
+            
+        // ensure next higher multiple of 5
+        if (nearestMultipleOfFive < grade) { nearestMultipleOfFive += 5; }
+           
+        // grade is rounded up (<3 away from next highest multiple of 5) and rounded grade is >=40
+        if ((nearestMultipleOfFive - grade) < 3 && nearestMultipleOfFive >= 40)
+        {
+            // add grade to list + the difference to the next highest 5
+            newGrades.Add(nearestMultipleOfFive);
+        }
+        else // if grade is >=3 away from next highest multiple of 5 or less than 40
+        {
+            // add grade to list
+            newGrades.Add(grade);
+        }                     
+    }
+        
+    return newGrades;
+}
