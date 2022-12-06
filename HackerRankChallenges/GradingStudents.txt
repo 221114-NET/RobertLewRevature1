@@ -12,7 +12,7 @@ public static List<int> gradingStudents(List<int> grades)
         // grade is rounded up (<3 away from next highest multiple of 5) and rounded grade is >=40
         if ((nearestMultipleOfFive - grade) < 3 && nearestMultipleOfFive >= 40)
         {
-            // add grade to list + the difference to the next highest 5
+            // add next highest 5 as new grade to list
             newGrades.Add(nearestMultipleOfFive);
         }
         else // if grade is >=3 away from next highest multiple of 5 or less than 40
