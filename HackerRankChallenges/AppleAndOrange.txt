@@ -1,0 +1,37 @@
+public static void countApplesAndOranges(int s, int t, int a, int b, List<int> apples, List<int> oranges)
+{
+    // s is the starting position of the house
+    // t is the end position of the house
+    // a is the point where the apple tree is
+    // b is the point where the orange tree is
+        
+    // number of apples and oranges within the range of the house s-t
+    int numApples = 0;
+    int numOranges = 0;
+        
+    // loop through the apples list and add the starting point to each of them
+    foreach (var apple in apples)
+    {
+        // get absolute position of the apple
+        int applePos = apple + a;
+            
+            
+        // find out if they are within the range of the house s-t inclusively
+        if (applePos >= s && applePos <= t) { ++numApples; }
+    }
+        
+    Console.WriteLine(numApples);
+        
+    // loop through the apples list and add the starting point to each of them
+    foreach (var orange in oranges)
+    {
+        // get absolute position of the orange
+        int orangePos = orange + b;
+            
+            
+        // find out if they are within the range of the house s-t inclusively
+        if (orangePos >= s && orangePos <= t) { ++numOranges; }
+    }
+        
+    Console.WriteLine(numOranges);
+}
