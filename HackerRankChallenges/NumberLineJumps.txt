@@ -1,0 +1,8 @@
+public static string kangaroo(int x1, int v1, int x2, int v2)
+{   
+    // checks if kangeroo 1 can ever catch up to kangeroo 2
+    // then checks if they will be at the same spot
+    if (v1 > v2) return (x2 - x1) % (v1 - v2) == 0 ? "YES" : "NO";
+        
+    return "NO";
+}
