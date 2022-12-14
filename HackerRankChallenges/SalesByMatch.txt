@@ -1,0 +1,25 @@
+public static int sockMerchant(int n, List<int> ar)
+{
+    int numPairs = 0;
+    // make a list of socks that have multiples and their corresponding counts
+    var multipleSocks = ar.GroupBy(x => x)
+            .Where(g => g.Count() > 1)
+            .Select(y => new {Name = y.Key, Count = y.Count()})
+            .ToList();
+        
+    // loop through all the socks in multiple socks
+    foreach (var sock in multipleSocks)
+    {
+        // make an integer to hold number of socks
+        int numSocks = sock.Count;
+            
+        // loop through socks as long as there are at least 2
+        while (numSocks >= 2)
+        {
+            numSocks -= 2; // remove a pair of socks from the total number of socks
+            numPairs++; // increment the number of sock pairs
+        }
+    }
+        
+    return numPairs;
+}
