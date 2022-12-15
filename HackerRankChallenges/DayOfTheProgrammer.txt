@@ -1,0 +1,31 @@
+public static string dayOfProgrammer(int year)
+{
+    int month = 9;
+    int daysTilSept = 31 + daysInFebruary(year) + 31 + 30 + 31 + 30 + 31 + 31; // Get the number of days in the months before day 256 (through August)
+    int day = 256 - daysTilSept;
+        
+    // check if Julian or Gregorian calendar
+    // if 1918, month days = 31 + 14 + 31 + 30 + 31 + 30 + 31 + 31 = 229
+    return $"{day.ToString("D2")}.{month.ToString("D2")}.{year}";
+}
+    
+// returns the number of days in February
+public static int daysInFebruary(int year)
+{
+    bool isGregorianCalendar = year > 1918; // check if year is in Gregorian calendar
+    bool isGregorianLeapYear = year % 400 == 0 || (year % 4 == 0 && year % 100 != 0); // check if year is Gregorian leap year
+        
+    if (year == 1918) // special case year 1918
+    {
+        return 15;
+    }
+    // if leap year in either Julian or Gregorian calendar
+    else if ((!isGregorianCalendar && year % 4 == 0) || (isGregorianCalendar && isGregorianLeapYear))
+    {
+        return 29;
+    }
+    else // non leap year
+    {
+        return 28;
+    }
+}
