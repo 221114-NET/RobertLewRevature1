@@ -1,0 +1,9 @@
+static string catAndMouse(int x, int y, int z)
+{
+    int catADistance = Math.Abs(x - z); // get the distance of cat a from the mouse
+    int catBDistance = Math.Abs(y - z); // get the distance of cat b from the mouse
+        
+    if (catADistance == catBDistance) return "Mouse C"; // if distances are equal
+    else if (catADistance < catBDistance) return "Cat A"; // if cat a is closer
+    else return "Cat B"; // if cat b is closer
+}
