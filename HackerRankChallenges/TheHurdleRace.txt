@@ -1,0 +1,9 @@
+public static int hurdleRace(int k, List<int> height)
+{
+    int maxHeight = height.Max(); // the maximum height of all the hurdles
+        
+    // return the number of doses taken
+    // if the difference between the max height and the height the character can jump is < 0
+    // return 0, else return the difference
+    return (maxHeight - k < 0) ? 0 : maxHeight - k;
+}
