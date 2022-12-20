@@ -1,0 +1,19 @@
+public static int designerPdfViewer(List<int> h, string word)
+{
+    // make a variable to hold max height of the word
+    int maxHeight = 0;
+        
+    // loop over the string
+    foreach (var letter in word)
+    {
+        // test it against the height list, hold in temp variable
+        int tempHeight = h[(int)(letter - 97)];
+            
+        // tests maxHeight against tempHeight
+        // sets to tempHeight if tempHeight is bigger
+        if (tempHeight > maxHeight) maxHeight = tempHeight;
+    }
+        
+    // calculate area of rectangle
+    return maxHeight * word.Length;
+}
